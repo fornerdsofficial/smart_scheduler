@@ -1,0 +1,195 @@
+/* 로그인 페이지 레이아웃 */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--bg-light);
+  background-image: linear-gradient(135deg, rgba(56, 161, 105, 0.05) 0%, rgba(56, 161, 105, 0.1) 100%);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.logo-section h1 {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.logo-section h1 i {
+  margin-right: 0.75rem;
+  font-size: 2rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.form-container {
+  padding: 2rem;
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-dark);
+  text-align: center;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.forgot-password {
+  font-size: 0.875rem;
+  color: var(--secondary-light);
+}
+
+.social-login {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.social-login p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.social-login p:before,
+.social-login p:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.social-login p:before {
+  left: 0;
+}
+
+.social-login p:after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-social {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+}
+
+.btn-social i {
+  margin-right: 0.5rem;
+}
+
+.btn-google {
+  color: #ea4335;
+}
+
+.btn-google:hover {
+  background-color: rgba(234, 67, 53, 0.1);
+}
+
+.btn-microsoft {
+  color: #0078d4;
+}
+
+.btn-microsoft:hover {
+  background-color: rgba(0, 120, 212, 0.1);
+}
+
+.form-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.form-footer a {
+  font-weight: 500;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .login-container {
+    box-shadow: none;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-actions .btn-primary {
+    width: 100%;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+  }
+}

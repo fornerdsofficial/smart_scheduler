@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 스케줄러 - 로그인</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="logo-section">
+                <h1><i class="fas fa-calendar-alt"></i> 스마트 스케줄러</h1>
+                <p class="tagline">AI가 당신의 일정을 최적화합니다</p>
+            </div>
+            
+            <div class="form-container" id="login-form">
+                <h2>로그인</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" placeholder="이메일 주소 입력" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">비밀번호</label>
+                        <input type="password" id="password" placeholder="비밀번호 입력" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">로그인</button>
+                        <a href="#" class="forgot-password">비밀번호 찾기</a>
+                    </div>
+                </form>
+                
+                <div class="social-login">
+                    <p>다른 방법으로 로그인</p>
+                    <div class="social-buttons">
+                        <button class="btn-social btn-google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button class="btn-social btn-microsoft">
+                            <i class="fab fa-microsoft"></i> Microsoft
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    <p>계정이 없으신가요? <a href="#" id="show-signup">회원가입</a></p>
+                </div>
+            </div>
+            
+            <div class="form-container hidden" id="signup-form">
+                <h2>회원가입</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="signup-name">이름</label>
+                        <input type="text" id="signup-name" placeholder="이름 입력" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-email">이메일</label>
+                        <input type="email" id="signup-email" placeholder="이메일 주소 입력" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-password">비밀번호</label>
+                        <input type="password" id="signup-password" placeholder="비밀번호 입력" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-confirm">비밀번호 확인</label>
+                        <input type="password" id="signup-confirm" placeholder="비밀번호 다시 입력" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">가입하기</button>
+                    </div>
+                </form>
+                
+                <div class="form-footer">
+                    <p>이미 계정이 있으신가요? <a href="#" id="show-login">로그인</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast-message" id="toast">
+        <p>메시지가 표시됩니다.</p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 스마트 스케줄러. 모든 권리 보유.</p>
+        <div class="footer-links">
+            <a href="#">이용약관</a> | 
+            <a href="#">개인정보처리방침</a> | 
+            <a href="#">문의하기</a>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

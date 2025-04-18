@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 스케줄러 - 일정 생성</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 헤더 -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <h1>스마트 스케줄러</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="일정 검색...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-profile">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="avatar">
+                    <img src="assets/default-avatar.png" alt="사용자 프로필">
+                </div>
+                <div class="user-menu">
+                    <span>홍길동 님</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- 사이드바 -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-home"></i>대시보드</a>
+                </li>
+                <li class="active">
+                    <a href="create-schedule.html"><i class="fas fa-plus-circle"></i>일정 생성</a>
+                </li>
+                <li>
+                    <a href="multi-attendee.html"><i class="fas fa-users"></i>다중 참석자</a>
+                </li>
+                <li>
+                    <a href="notification.html"><i class="fas fa-bell"></i>알림 설정</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i>설정</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i>로그아웃</a>
+            </div>
+        </nav>
+
+        <!-- 메인 콘텐츠 -->
+        <main>
+            <div class="page-header">
+                <h2>일정 생성</h2>
+                <p class="subheading">자연어로 일정을 간편하게 입력하세요. AI가 자동으로 분석합니다.</p>
+            </div>
+
+            <div class="create-schedule-container">
+                <div class="natural-input-section">
+                    <div class="input-area">
+                        <textarea id="natural-input" placeholder="예: '다음 주 월요일 오전 10시에 팀 회의 잡아줘' 또는 '내일 점심시간에 김영희님과 미팅'"></textarea>
+                        <button id="voice-input" class="btn-icon">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <div class="input-actions">
+                        <button id="analyze-btn" class="btn-primary">
+                            <i class="fas fa-magic"></i> 일정 분석하기
+                        </button>
+                        <button id="clear-btn" class="btn-secondary">
+                            <i class="fas fa-times"></i> 지우기
+                        </button>
+                    </div>
+                </div>
+
+                <div class="schedule-preview" id="schedule-preview">
+                    <div class="preview-header">
+                        <h3>일정 미리보기</h3>
+                        <p class="ai-badge"><i class="fas fa-robot"></i> AI 분석 결과</p>
+                    </div>
+                    <div class="preview-content">
+                        <div class="preview-field">
+                            <label>제목</label>
+                            <input type="text" id="title-preview" value="팀 회의">
+                        </div>
+                        <div class="preview-row">
+                            <div class="preview-field">
+                                <label>날짜</label>
+                                <input type="date" id="date-preview" value="2025-04-22">
+                            </div>
+                            <div class="preview-field">
+                                <label>시간</label>
+                                <div class="time-inputs">
+                                    <input type="time" id="start-time-preview" value="10:00">
+                                    <span>~</span>
+                                    <input type="time" id="end-time-preview" value="11:00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-field">
+                            <label>위치</label>
+                            <input type="text" id="location-preview" value="회의실 A">
+                        </div>
+                        <div class="preview-field">
+                            <label>참석자</label>
+                            <div class="attendees-input">
+                                <div class="attendee-tag">
+                                    나 <i class="fas fa-times"></i>
+                                </div>
+                                <div class="attendee-tag">
+                                    김영희 <i class="fas fa-times"></i>
+                                </div>
+                                <div class="attendee-tag">
+                                    이철수 <i class="fas fa-times"></i>
+                                </div>
+                                <input type="text" placeholder="+ 참석자 추가">
+                            </div>
+                        </div>
+                        <div class="preview-field">
+                            <label>메모</label>
+                            <textarea id="notes-preview" placeholder="메모 추가..."></textarea>
+                        </div>
+                    </div>
+                    <div class="preview-actions">
+                        <button id="save-schedule" class="btn-primary">
+                            <i class="fas fa-save"></i> 일정 저장
+                        </button>
+                        <button id="modify-schedule" class="btn-secondary">
+                            <i class="fas fa-edit"></i> 직접 수정
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3><i class="fas fa-lightbulb"></i> 입력 예시</h3>
+                <ul class="tips-list">
+                    <li><span class="tip-highlight">다음 주 월요일 오전 10시에 회의실 A에서 팀 회의 잡아줘</span></li>
+                    <li><span class="tip-highlight">내일 점심에 이철수님과 카페에서 프로젝트 미팅</span></li>
+                    <li><span class="tip-highlight">매주 금요일 오후 2시에 주간 보고 일정 등록해줘</span></li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="recording-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>음성 녹음 중...</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="recording-animation">
+                    <div class="recording-wave"></div>
+                    <div class="recording-wave"></div>
+                    <div class="recording-wave"></div>
+                </div>
+                <p class="recording-status">듣고 있습니다...</p>
+            </div>
+            <div class="modal-footer">
+                <button id="stop-recording" class="btn-primary">
+                    <i class="fas fa-stop"></i> 녹음 중지
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-message" id="toast">
+        <p>메시지가 표시됩니다.</p>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/scheduler.js"></script>
+</body>
+</html>

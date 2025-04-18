@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 스케줄러 - 알림 설정</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 헤더 -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <h1>스마트 스케줄러</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="일정 검색...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-profile">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="avatar">
+                    <img src="assets/default-avatar.png" alt="사용자 프로필">
+                </div>
+                <div class="user-menu">
+                    <span>홍길동 님</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- 사이드바 -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-home"></i>대시보드</a>
+                </li>
+                <li>
+                    <a href="create-schedule.html"><i class="fas fa-plus-circle"></i>일정 생성</a>
+                </li>
+                <li>
+                    <a href="multi-attendee.html"><i class="fas fa-users"></i>다중 참석자</a>
+                </li>
+                <li class="active">
+                    <a href="notification.html"><i class="fas fa-bell"></i>알림 설정</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i>설정</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i>로그아웃</a>
+            </div>
+        </nav>
+
+        <!-- 메인 콘텐츠 -->
+        <main>
+            <div class="page-header">
+                <h2>알림 설정</h2>
+                <p class="subheading">알림 수신 방법과 시점을 원하는대로 설정하세요.</p>
+            </div>
+
+            <div class="notification-settings-container">
+                <div class="notification-types-section">
+                    <div class="section-header">
+                        <h3>알림 유형</h3>
+                        <div class="main-toggle">
+                            <label class="switch-label">모든 알림</label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="all-notifications" checked>
+                                <label for="all-notifications"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-calendar-day"></i>
+                                <div class="info-text">
+                                    <h4>일정 알림</h4>
+                                    <p>예정된 일정에 대한 알림을 받습니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="schedule-notifications" checked>
+                                    <label for="schedule-notifications"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-item notification-timing">
+                            <div class="timing-label">알림 시점</div>
+                            <div class="timing-options">
+                                <div class="timing-option">
+                                    <input type="checkbox" id="time-10min" checked>
+                                    <label for="time-10min">10분 전</label>
+                                </div>
+                                <div class="timing-option">
+                                    <input type="checkbox" id="time-30min" checked>
+                                    <label for="time-30min">30분 전</label>
+                                </div>
+                                <div class="timing-option">
+                                    <input type="checkbox" id="time-1hour">
+                                    <label for="time-1hour">1시간 전</label>
+                                </div>
+                                <div class="timing-option">
+                                    <input type="checkbox" id="time-1day">
+                                    <label for="time-1day">1일 전</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-user-plus"></i>
+                                <div class="info-text">
+                                    <h4>초대 알림</h4>
+                                    <p>일정 초대를 받았을 때 알려줍니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="invitation-notifications" checked>
+                                    <label for="invitation-notifications"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-sync"></i>
+                                <div class="info-text">
+                                    <h4>일정 변경 알림</h4>
+                                    <p>내가 참석하는 일정의 변경 사항을 알려줍니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="change-notifications" checked>
+                                    <label for="change-notifications"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-robot"></i>
+                                <div class="info-text">
+                                    <h4>AI 추천 알림</h4>
+                                    <p>AI가 추천하는 최적 일정 정보를 받습니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="ai-notifications">
+                                    <label for="ai-notifications"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-channels-section">
+                    <div class="section-header">
+                        <h3>알림 채널</h3>
+                    </div>
+
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-desktop"></i>
+                                <div class="info-text">
+                                    <h4>브라우저 알림</h4>
+                                    <p>웹 브라우저에서 푸시 알림을 받습니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="browser-notifications" checked>
+                                    <label for="browser-notifications"></label>
+                                </div>
+                                <button class="btn-small" id="request-permission">권한 요청</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-envelope"></i>
+                                <div class="info-text">
+                                    <h4>이메일 알림</h4>
+                                    <p>이메일로 알림을 받습니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <label for="email-notifications"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div class="info-text">
+                                    <h4>모바일 알림</h4>
+                                    <p>모바일 앱으로 알림을 받습니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="mobile-notifications" checked>
+                                    <label for="mobile-notifications"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-item">
+                            <div class="setting-info">
+                                <i class="fas fa-comment-alt"></i>
+                                <div class="info-text">
+                                    <h4>SMS 알림</h4>
+                                    <p>휴대폰으로 문자 메시지를 받습니다.</p>
+                                </div>
+                            </div>
+                            <div class="setting-controls">
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="sms-notifications">
+                                    <label for="sms-notifications"></label>
+                                </div>
+                                <div class="phone-input">
+                                    <input type="tel" placeholder="휴대폰 번호 입력" value="010-1234-5678">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-priority-section">
+                    <div class="section-header">
+                        <h3>알림 우선순위</h3>
+                    </div>
+
+                    <div class="priority-settings">
+                        <div class="priority-item">
+                            <div class="priority-label">중요 일정만 알림</div>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="important-only">
+                                <label for="important-only"></label>
+                            </div>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-label">알림 빈도</div>
+                            <div class="slider-container">
+                                <input type="range" min="1" max="5" value="3" class="slider" id="frequency-slider">
+                                <div class="slider-labels">
+                                    <span>낮음</span>
+                                    <span>중간</span>
+                                    <span>높음</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-label">무음 시간</div>
+                            <div class="time-range">
+                                <select id="quiet-start">
+                                    <option value="21">오후 9시</option>
+                                    <option value="22" selected>오후 10시</option>
+                                    <option value="23">오후 11시</option>
+                                    <option value="0">오전 12시</option>
+                                </select>
+                                <span>부터</span>
+                                <select id="quiet-end">
+                                    <option value="6">오전 6시</option>
+                                    <option value="7" selected>오전 7시</option>
+                                    <option value="8">오전 8시</option>
+                                    <option value="9">오전 9시</option>
+                                </select>
+                                <span>까지</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn-primary" id="save-notifications">
+                        <i class="fas fa-save"></i> 설정 저장
+                    </button>
+                    <button class="btn-secondary" id="reset-notifications">
+                        <i class="fas fa-undo"></i> 기본값으로 초기화
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-message" id="toast">
+        <p>메시지가 표시됩니다.</p>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/scheduler.js"></script>
+</body>
+</html>

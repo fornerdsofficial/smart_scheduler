@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 스케줄러 - 일정 상세</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 헤더 -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-calendar-alt"></i>
+                <h1>스마트 스케줄러</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="일정 검색...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-profile">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="avatar">
+                    <img src="assets/default-avatar.png" alt="사용자 프로필">
+                </div>
+                <div class="user-menu">
+                    <span>홍길동 님</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- 사이드바 -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-home"></i>대시보드</a>
+                </li>
+                <li>
+                    <a href="create-schedule.html"><i class="fas fa-plus-circle"></i>일정 생성</a>
+                </li>
+                <li>
+                    <a href="multi-attendee.html"><i class="fas fa-users"></i>다중 참석자</a>
+                </li>
+                <li>
+                    <a href="notification.html"><i class="fas fa-bell"></i>알림 설정</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i>설정</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i>로그아웃</a>
+            </div>
+        </nav>
+
+        <!-- 메인 콘텐츠 -->
+        <main>
+            <div class="page-header">
+                <h2>일정 상세</h2>
+                <div class="page-actions">
+                    <button class="btn-secondary">
+                        <i class="fas fa-edit"></i> 수정
+                    </button>
+                    <button class="btn-danger">
+                        <i class="fas fa-trash"></i> 삭제
+                    </button>
+                </div>
+            </div>
+
+            <div class="schedule-detail-container">
+                <div class="schedule-info-card">
+                    <div class="schedule-header">
+                        <h3>프로젝트 기획 회의</h3>
+                        <div class="schedule-badges">
+                            <span class="badge important">중요</span>
+                            <span class="badge meeting">회의</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <div class="detail-content">
+                                <h4>날짜 및 시간</h4>
+                                <p>2025년 4월 22일 (화) 13:30 - 14:30</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="detail-content">
+                                <h4>장소</h4>
+                                <p>온라인 (Zoom)</p>
+                                <a href="#" class="link-text">회의 링크 복사</a>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <div class="detail-content">
+                                <h4>참석자</h4>
+                                <div class="attendee-avatars">
+                                    <div class="avatar-group">
+                                        <img src="assets/default-avatar.png" alt="홍길동" title="홍길동 (주최자)">
+                                        <img src="assets/default-avatar.png" alt="김영희" title="김영희">
+                                        <img src="assets/default-avatar.png" alt="이철수" title="이철수">
+                                        <img src="assets/default-avatar.png" alt="박민지" title="박민지">
+                                        <div class="avatar more">+2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="detail-content">
+                                <h4>설명</h4>
+                                <p>2분기 프로젝트 계획 수립을 위한 회의입니다. 아래 안건을 미리 검토해주세요.</p>
+                                <ul class="agenda-list">
+                                    <li>1분기 프로젝트 진행 상황 점검</li>
+                                    <li>2분기 주요 목표 설정</li>
+                                    <li>일정 및 담당자 배정</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-paperclip"></i>
+                            <div class="detail-content">
+                                <h4>첨부 파일</h4>
+                                <div class="attachment-list">
+                                    <div class="attachment-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span>2분기_계획서_초안.pdf</span>
+                                    </div>
+                                    <div class="attachment-item">
+                                        <i class="fas fa-file-excel"></i>
+                                        <span>프로젝트_일정표.xlsx</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="optimization-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-magic"></i> 일정 최적화</h3>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="optimize-toggle" checked>
+                            <label for="optimize-toggle"></label>
+                        </div>
+                    </div>
+
+                    <div class="optimization-options">
+                        <div class="optimization-item">
+                            <div class="option-info">
+                                <h4>이동 시간 반영</h4>
+                                <p>이전 일정 장소에서 현재 일정까지의 이동 시간을 추가합니다.</p>
+                            </div>
+                            <div class="toggle-switch small">
+                                <input type="checkbox" id="travel-time-toggle" checked>
+                                <label for="travel-time-toggle"></label>
+                            </div>
+                        </div>
+                        <div class="travel-time-detail">
+                            <div class="time-estimate">
+                                <i class="fas fa-car"></i>
+                                <span>회의실 A에서 약 15분 소요</span>
+                            </div>
+                            <div class="departure-time">
+                                <span>출발 권장 시간: 13:15</span>
+                            </div>
+                        </div>
+
+                        <div class="optimization-item">
+                            <div class="option-info">
+                                <h4>준비 시간 추가</h4>
+                                <p>일정 전 준비에 필요한 시간을 자동으로 계산합니다.</p>
+                            </div>
+                            <div class="toggle-switch small">
+                                <input type="checkbox" id="prep-time-toggle" checked>
+                                <label for="prep-time-toggle"></label>
+                            </div>
+                        </div>
+                        <div class="prep-time-detail">
+                            <span>권장 준비 시간: 10분 (13:20부터)</span>
+                        </div>
+
+                        <div class="optimization-item">
+                            <div class="option-info">
+                                <h4>일정 앞뒤 버퍼 추가</h4>
+                                <p>전후 일정 사이에 휴식 또는 전환 시간을 확보합니다.</p>
+                            </div>
+                            <div class="toggle-switch small">
+                                <input type="checkbox" id="buffer-toggle">
+                                <label for="buffer-toggle"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="adjacent-schedules">
+                        <h4>연결된 일정</h4>
+                        <div class="timeline">
+                            <div class="timeline-item previous">
+                                <div class="time-badge">11:00 - 12:30</div>
+                                <div class="timeline-content">
+                                    <h5>팀 주간 미팅</h5>
+                                    <p>회의실 A</p>
+                                </div>
+                            </div>
+                            <div class="timeline-connector">
+                                <div class="connector-line"></div>
+                                <div class="connector-label">이동 및 준비 시간</div>
+                            </div>
+                            <div class="timeline-item current">
+                                <div class="time-badge">13:30 - 14:30</div>
+                                <div class="timeline-content">
+                                    <h5>프로젝트 기획 회의</h5>
+                                    <p>온라인 (Zoom)</p>
+                                </div>
+                            </div>
+                            <div class="timeline-connector">
+                                <div class="connector-line"></div>
+                            </div>
+                            <div class="timeline-item next">
+                                <div class="time-badge">15:00 - 16:00</div>
+                                <div class="timeline-content">
+                                    <h5>클라이언트 미팅</h5>
+                                    <p>카페 스테이션</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-message" id="toast">
+        <p>메시지가 표시됩니다.</p>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/scheduler.js"></script>
+</body>
+</html>
